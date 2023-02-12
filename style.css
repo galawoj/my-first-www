@@ -17,7 +17,7 @@ body, html {
 .box {
     display: flex;
     width:80%;
-    height: 500px;
+    min-height: 500px;
     max-width: 1024px;
     background-color: #ffffff;
 }
@@ -35,6 +35,7 @@ body, html {
 
 }
 .box__column--image{
+    min-height: 300px;
     background-image: url("./skan 008.jpg");
     background-repeat: no-repeat;
     background-size: cover;
