@@ -35,6 +35,7 @@ body, html {
 
 }
 .box__column--image{
+    display: flex;
     min-height: 500px;
     background-image: url("./skan 008.jpg");
     background-repeat: no-repeat;
