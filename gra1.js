@@ -7,12 +7,19 @@ function play() {
 
 
 
-    if (userNumber < numberCake) {
-       message = "Czy Ty masz mnie za ptaszka?!";
+
+    if (isNaN(userNumber)==true) {
+        message = "Co masz na myśli???";  
+    } else if (userNumber*numberCake<0) {
+        message = "Co masz na myśli???"; 
+    } else if (userNumber < numberCake) {
+        message = "Czy Ty masz mnie za ptaszka?! Zgaduj dalej!";  
     } else if (userNumber > numberCake) {
-        message = "Tyle to nawet Devilek nie zje!";
+        message = "Tyle to nawet Devilek nie zje! Zgaduj dalej!";
     } else if (userNumber*numberCake==100) {
         message = "Skąd wiedziałeś?? Ale się najadłam!";
+    } else if (userNumber*numberCake==0) {
+        message = "Babeczki jeszcze ciepłe! Proszę, poczęstuj się, ale kilka mi zostaw:)";   
     } else {
         message = "Zgadłeś!! Reszta jest dla Ciebie :)"
     }
