@@ -49,14 +49,12 @@ function enter() {
                 if (kolory[i] != "orange") { kolory.splice(i, 1, "lightblue") }
             }
         }
-
-        document.getElementById(`${wier},0`).style.backgroundColor = kolory[0]
-        document.getElementById(`${wier},1`).style.backgroundColor = kolory[1]
-        document.getElementById(`${wier},2`).style.backgroundColor = kolory[2]
-        document.getElementById(`${wier},3`).style.backgroundColor = kolory[3]
-        document.getElementById(`${wier},4`).style.backgroundColor = kolory[4]
-        
-       
+for(i = 0; i < 5; i++) {
+    document.getElementById(`${wier},${i}`).style.backgroundColor = kolory[i]
+}
+for(i = 0; i < 5; i++) {  
+        document.getElementById(slowo[i]).style.backgroundColor = kolory[i]
+}
         
         if(kolory[0] + kolory[1] + kolory[2] + kolory[3] + kolory[4] == "orangeorangeorangeorangeorange") {
             document.getElementById("winner").innerHTML = "WYGRAŁEŚ BABECZKĘ!!!"
