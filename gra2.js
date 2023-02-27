@@ -1,8 +1,27 @@
-let los = "babka";
-los = los + los
-let wier = 0;
-let slowo
+let lista_slow
 
+const xhr = new XMLHttpRequest()
+
+xhr.onload = () => {
+    if(xhr.status === 200){
+        lista_slow = (xhr.responseText)}
+}
+xhr.open('GET','lista_slow.txt',true);
+xhr.send();
+/*
+for(i=0; i<6798;i++){
+(i*9,i*9+4)
+}
+*/
+//tekst.substring(0, 3)
+
+let los = "babka"
+
+los = los + los
+
+let wier = 0;
+
+let slowo
 
 
 
@@ -49,16 +68,16 @@ function enter() {
                 if (kolory[i] != "orange") { kolory.splice(i, 1, "lightblue") }
             }
         }
-for(i = 0; i < 5; i++) {
-    document.getElementById(`${wier},${i}`).style.backgroundColor = kolory[i]
-}
-for(i = 0; i < 5; i++) {  
-        document.getElementById(slowo[i]).style.backgroundColor = kolory[i]
-}
-        
-        if(kolory[0] + kolory[1] + kolory[2] + kolory[3] + kolory[4] == "orangeorangeorangeorangeorange") {
+        for (i = 0; i < 5; i++) {
+            document.getElementById(`${wier},${i}`).style.backgroundColor = kolory[i]
+        }
+        for (i = 0; i < 5; i++) {
+            document.getElementById(slowo[i]).style.backgroundColor = kolory[i]
+        }
+
+        if (kolory[0] + kolory[1] + kolory[2] + kolory[3] + kolory[4] == "orangeorangeorangeorangeorange") {
             document.getElementById("winner").innerHTML = "WYGRAŁEŚ BABECZKĘ!!!"
-            wier =6
+            wier = 6
         } else {
             wier = wier + 1
         }
@@ -368,7 +387,7 @@ function z() {
 }
 function aa() {
     let kol = 0;
-    let litera = document.getElementById("aa").textContent;
+    let litera = document.getElementById("ą").textContent;
     let litera2 = document.getElementById(`${wier},${kol}`).textContent;
     while (litera2 != "") {
         kol++
@@ -379,7 +398,7 @@ function aa() {
 }
 function cc() {
     let kol = 0;
-    let litera = document.getElementById("cc").textContent;
+    let litera = document.getElementById("ć").textContent;
     let litera2 = document.getElementById(`${wier},${kol}`).textContent;
     while (litera2 != "") {
         kol++
@@ -390,7 +409,7 @@ function cc() {
 }
 function ee() {
     let kol = 0;
-    let litera = document.getElementById("ee").textContent;
+    let litera = document.getElementById("ę").textContent;
     let litera2 = document.getElementById(`${wier},${kol}`).textContent;
     while (litera2 != "") {
         kol++
@@ -401,7 +420,7 @@ function ee() {
 }
 function oo() {
     let kol = 0;
-    let litera = document.getElementById("oo").textContent;
+    let litera = document.getElementById("ó").textContent;
     let litera2 = document.getElementById(`${wier},${kol}`).textContent;
     while (litera2 != "") {
         kol++
@@ -412,7 +431,7 @@ function oo() {
 }
 function ll() {
     let kol = 0;
-    let litera = document.getElementById("ll").textContent;
+    let litera = document.getElementById("ł").textContent;
     let litera2 = document.getElementById(`${wier},${kol}`).textContent;
     while (litera2 != "") {
         kol++
@@ -423,7 +442,7 @@ function ll() {
 }
 function ss() {
     let kol = 0;
-    let litera = document.getElementById("ss").textContent;
+    let litera = document.getElementById("ś").textContent;
     let litera2 = document.getElementById(`${wier},${kol}`).textContent;
     while (litera2 != "") {
         kol++
@@ -434,7 +453,7 @@ function ss() {
 }
 function zz() {
     let kol = 0;
-    let litera = document.getElementById("zz").textContent;
+    let litera = document.getElementById("ż").textContent;
     let litera2 = document.getElementById(`${wier},${kol}`).textContent;
     while (litera2 != "") {
         kol++
@@ -445,7 +464,7 @@ function zz() {
 }
 function zzz() {
     let kol = 0;
-    let litera = document.getElementById("zzz").textContent;
+    let litera = document.getElementById("ź").textContent;
     let litera2 = document.getElementById(`${wier},${kol}`).textContent;
     while (litera2 != "") {
         kol++
