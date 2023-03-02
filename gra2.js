@@ -4,6 +4,9 @@ let los_index = Math.floor(Math.random() * (6796 + 1))
 let lista_slow_tabl = []
 let wier = 0;
 let slowo
+let litery_orange = []
+let litery_blue = []
+let litery_gray = []
 
 const xhr = new XMLHttpRequest()
 
@@ -14,7 +17,7 @@ xhr.onload = () => {
         }
 
         //los = lista_slow_tabl[los_index]
-        los = "BABKA"
+        los = "ŁAKOĆ"
         los = los + los
     }
 }
@@ -47,47 +50,74 @@ function enter() {
             }
             i++
         }
-    } if (document.getElementById("winner").textContent == "") {
+        if (document.getElementById("winner").textContent == "") {
 
 
-        for (i = 0; i < los.length; i++) {
-            los_tabl.push(los.charAt(i))
-        }
+            for (i = 0; i < los.length; i++) {
+                los_tabl.push(los.charAt(i))
+            }
 
-        for (i = 0; i < 5; i++) {
-            if (slowo[i] === los_tabl[i]) {
-                kolory.push("orange")
-                los_tabl.splice(i, 1, "")
-                los_tabl.splice(i + 5, 1, "")
+            for (i = 0; i < 5; i++) {
+                if (slowo[i] === los_tabl[i]) {
+                    kolory.push("orange")
+                    los_tabl.splice(i, 1, "")
+                    los_tabl.splice(i + 5, 1, "")
 
+                } else {
+                    kolory.push("gray")
+                }
+            }
+            for (i = 0; i < 5; i++) {
+
+                if (slowo[i] === los_tabl[i + 1]) {
+                    if (kolory[i] != "orange") { kolory.splice(i, 1, "lightblue") }
+                } else if (slowo[i] === los_tabl[i + 2]) {
+                    if (kolory[i] !== "orange") { kolory.splice(i, 1, "lightblue") }
+                } else if (slowo[i] === los_tabl[i + 3]) {
+                    if (kolory[i] != "orange") { kolory.splice(i, 1, "lightblue") }
+                } else if (slowo[i] === los_tabl[i + 4]) {
+                    if (kolory[i] != "orange") { kolory.splice(i, 1, "lightblue") }
+                }
+
+
+            }
+            
+            for (i = 0; i < 5; i++) {
+                if(kolory[i]==="orange"){
+                    litery_orange.push(slowo[i])}
+                }
+                
+                
+                for (i = 0; i < 5; i++) {
+                    if(kolory[i]==="lightblue"){
+                        litery_blue.push(slowo[i])}
+                    }
+
+                    for (i = 0; i < 5; i++) {
+                        if(kolory[i]==="gray"){
+                            litery_gray.push(slowo[i])}
+                        }
+                    
+
+            for (i = 0; i < 5; i++) {
+                document.getElementById(`${wier},${i}`).style.backgroundColor = kolory[i]
+            }
+            for (i = 0; i < litery_gray.length; i++) {
+                document.getElementById(litery_gray[i]).style.backgroundColor = "gray"
+            }
+            for (i = 0; i < litery_blue.length; i++) {
+                document.getElementById(litery_blue[i]).style.backgroundColor = "lightblue"
+            }
+            for (i = 0; i < litery_orange.length; i++) {
+                document.getElementById(litery_orange[i]).style.backgroundColor = "orange"
+            }
+
+            if (kolory[0] + kolory[1] + kolory[2] + kolory[3] + kolory[4] == "orangeorangeorangeorangeorange") {
+                document.getElementById("winner").innerHTML = "WYGRAŁEŚ BABECZKĘ!!!"
+                wier = null
             } else {
-                kolory.push("gray")
+                wier = wier + 1
             }
-        }
-        for (i = 0; i < 5; i++) {
-
-            if (slowo[i] === los_tabl[i + 1]) {
-                if (kolory[i] != "orange") { kolory.splice(i, 1, "lightblue") }
-            } else if (slowo[i] === los_tabl[i + 2]) {
-                if (kolory[i] !== "orange") { kolory.splice(i, 1, "lightblue") }
-            } else if (slowo[i] === los_tabl[i + 3]) {
-                if (kolory[i] != "orange") { kolory.splice(i, 1, "lightblue") }
-            } else if (slowo[i] === los_tabl[i + 4]) {
-                if (kolory[i] != "orange") { kolory.splice(i, 1, "lightblue") }
-            }
-        }
-        for (i = 0; i < 5; i++) {
-            document.getElementById(`${wier},${i}`).style.backgroundColor = kolory[i]
-        }
-        for (i = 0; i < 5; i++) {
-            document.getElementById(slowo[i]).style.backgroundColor = kolory[i]
-        }
-
-        if (kolory[0] + kolory[1] + kolory[2] + kolory[3] + kolory[4] == "orangeorangeorangeorangeorange") {
-            document.getElementById("winner").innerHTML = "WYGRAŁEŚ BABECZKĘ!!!"
-            wier = 6
-        } else {
-            wier = wier + 1
         }
     }
 
